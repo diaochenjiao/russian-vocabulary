@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">俄语考研词汇</string>
+    <string name="title_activity_main">俄语考研词汇</string>
+    <string name="package_name">cn.russian.vocabulary</string>
+    <string name="custom_url_scheme">cn.russian.vocabulary</string>
+</resources>
