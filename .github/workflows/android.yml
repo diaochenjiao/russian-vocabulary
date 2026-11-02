@@ -4,7 +4,7 @@ on:
     paths: ['mobile/**', '.github/workflows/android.yml']
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   apk:
     runs-on: ubuntu-24.04
@@ -34,3 +34,12 @@ jobs:
           path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
 
+      - name: Publish installable test APK
+        run: |
+          mkdir -p downloads
+          cp mobile/android/app/build/outputs/apk/debug/app-debug.apk downloads/russian-vocabulary-debug.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/russian-vocabulary-debug.apk
+          git diff --cached --quiet || git commit -m "Publish Android test APK"
+          git push
