@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+pymupdf
+pymorphy3
+python-docx
+openpyxl
+httpx
+python-dotenv
+pytest
+
+edge-tts
